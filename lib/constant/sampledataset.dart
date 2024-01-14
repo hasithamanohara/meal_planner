@@ -1,4 +1,4 @@
-const List<Map<String, Object>> FOOD_DATA = [
+const List<Map<String, dynamic>> FOOD_DATA = [
   {"name": "Burger", "brand": "Hawkers", "price": 2.99, "image": "burger.jpg"},
   {
     "name": "Cheese Dip",

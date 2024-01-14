@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HorizontalList extends StatelessWidget {
-  final List<Map<String, Object>> items;
+  final List<Map<String, dynamic>> items;
 
   HorizontalList({required this.items});
 
@@ -13,7 +13,6 @@ class HorizontalList extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 15.0),
       height: screenHeight * 0.06,
-      
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: items.length,

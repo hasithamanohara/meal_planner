@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:samsungfoodapp/components/atomwidgets/xplorecommuniycard.dart';
 import 'package:samsungfoodapp/components/widgets/horizontallist.dart';
+import 'package:samsungfoodapp/components/widgets/topcategoriesscrollview.dart';
 import 'package:samsungfoodapp/components/widgets/xplorecustomappbar.dart';
 import 'package:samsungfoodapp/constant/sampledataset.dart';
 
@@ -16,10 +18,13 @@ class _ExploreScreenState extends State<ExploreScreen> {
     return Scaffold(
       appBar: AppBar(title: const ExploreCustomAppBar()),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           HorizontalList(items: FOOD_DATA),
+          const topcategoriesscrollview(),
+          
         ],
-      ) ,
+      ),
     );
   }
 }
