@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:samsungfoodapp/components/widgets/popupwidgets/xploresearchcamerapopup.dart';
 import 'package:samsungfoodapp/constant/colors.dart';
 import 'package:samsungfoodapp/constant/styles.dart';
 
@@ -27,7 +28,9 @@ class ExploreCustomAppBar extends StatelessWidget {
                 prefixIcon:
                     Icon(Icons.search, size: iconSize, color: BlackColor),
                 suffixIcon: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      BottomPopupStep1.show(context);
+                    },
                     icon: Icon(Icons.camera_alt_outlined,
                         size: iconSize, color: BlackColor)),
                 border: OutlineInputBorder(
