@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:samsungfoodapp/components/atomwidgets/xplorecommuniycard.dart';
 import 'package:samsungfoodapp/components/widgets/horizontallist.dart';
+import 'package:samsungfoodapp/components/widgets/recipforoven.dart';
 import 'package:samsungfoodapp/components/widgets/topcategoriesscrollview.dart';
 import 'package:samsungfoodapp/components/widgets/xplorecommuniti.dart';
 import 'package:samsungfoodapp/components/widgets/xplorecustomappbar.dart';
+import 'package:samsungfoodapp/components/widgets/xplorepopularcreators.dart';
+import 'package:samsungfoodapp/components/widgets/xplorerecipmaylike.dart';
 import 'package:samsungfoodapp/constant/sampledataset.dart';
 
 class ExploreScreen extends StatefulWidget {
@@ -37,11 +39,30 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   SizedBox(
                     height: 15,
                   ),
-                  Container(
-                    width: double.maxFinite,
-                    height: 200,
-                    color: Colors.red,
-                  )
+                  XplorePopularCreators(),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  RecipBrowsContainer(),
+                  //oven browse
+                  SizedBox(
+                    height: 15,
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListView.builder(
+                      shrinkWrap:
+                          true, // this will limit the GridView to the size of its children
+                      physics:
+                          NeverScrollableScrollPhysics(), // this will disable scrolling in the GridView
+                      itemCount: 5,
+                      itemBuilder: (BuildContext context, int index) {
+                        return XploreMayLikeRecip();
+                      },
+                    ),
+                  ),
+                  // XploreMayLikeRecip(),
                 ],
               ),
             ),
@@ -49,7 +70,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
           Container(
             width: double.maxFinite,
             height: screenHeight * .07,
-            color: const Color.fromARGB(255, 255, 255, 255),
+            color: Color.fromARGB(255, 0, 0, 0),
           )
         ],
       ),
