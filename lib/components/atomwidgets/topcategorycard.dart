@@ -19,7 +19,7 @@ class _TopCategoryBuilderState extends State<TopCategoryBuilder> {
         return Padding(
           padding: const EdgeInsets.only(top: 1, left: 1, bottom: 2),
           child: Container(
-            width: 160,
+            width: 145,
             child: Card(
               child: Container(
                 decoration: BoxDecoration(

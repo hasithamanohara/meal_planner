@@ -9,7 +9,7 @@ class ReusableContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 160,
+      height: 145,
       child: TopCategoryBuilder(topcategoryData: foodData),
     );
   }

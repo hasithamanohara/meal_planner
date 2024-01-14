@@ -21,10 +21,13 @@ class _topcategoriesscrollviewState extends State<topcategoriesscrollview> {
       padding: const EdgeInsets.only(left: 8, right: 8),
       child: Container(
         height: screenHeight * 0.3,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-        color: WhiteColorBackground),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: WhiteColorBackground),
         child:
-            Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
+              children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Row(
@@ -38,8 +41,6 @@ class _topcategoriesscrollviewState extends State<topcategoriesscrollview> {
               ],
             ),
           ),
-
-          //scrollview horizontal cotaie with image here
           ReusableContainer(foodData: FOOD_DATA)
         ]),
       ),
