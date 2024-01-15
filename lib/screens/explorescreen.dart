@@ -21,7 +21,10 @@ class _ExploreScreenState extends State<ExploreScreen> {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: AppBar(title: const ExploreCustomAppBar()),
+      appBar: AppBar(
+        title: const ExploreCustomAppBar(),
+        backgroundColor: Color.fromARGB(59, 185, 178, 178),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
