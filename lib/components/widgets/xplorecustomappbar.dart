@@ -1,55 +1,55 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:samsungfoodapp/components/widgets/popupwidgets/xploresearchcamerapopup.dart';
 import 'package:samsungfoodapp/constant/colors.dart';
 import 'package:samsungfoodapp/constant/styles.dart';
+import 'package:samsungfoodapp/screens/searchscreen.dart';
 
 class ExploreCustomAppBar extends StatelessWidget {
   const ExploreCustomAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 5, bottom: 5),
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width - 32,
-            child: TextField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                isDense: true,
-                contentPadding: EdgeInsets.symmetric(horizontal: 15.0),
-                hintText: "Search Samsung Food",
-                hintStyle: xploreCustomAppBarStyle,
-                prefixIcon:
-                    Icon(Icons.search, size: iconSize, color: BlackColor),
-                suffixIcon: IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.camera_alt_outlined,
-                        size: iconSize, color: BlackColor)),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(xploreAppBarBorderRadius),
-                  borderSide: BorderSide(
-                      width: xploreAppBarBorderWidth, color: BlackColor),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(xploreAppBarBorderRadius),
-                  borderSide: BorderSide(
-                      width: xploreAppBarBorderWidth, color: BlackColor),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(xploreAppBarBorderRadius),
-                  borderSide: BorderSide(
-                      width: xploreAppBarBorderWidth, color: BlackColor),
-                ),
+    return Container(
+      decoration: BoxDecoration(
+          color: const Color.fromARGB(255, 255, 255, 255),
+          borderRadius: BorderRadius.circular(25)),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Icon(Icons.search, size: iconSize, color: BlackColor),
+            SizedBox(
+              width: 10,
+            ),
+            GestureDetector(
+              child: Text(
+                "Search Samsung Food",
+                style: xploreCustomAppBarStyle,
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SearchScreen()),
+                );
+              },
+            ),
+            Spacer(),
+            GestureDetector(
+              onTap: () {
+                BottomPopupStep1.show(context);
+              },
+              child: Icon(
+                Icons.camera_alt_outlined,
+                color: BlackColor,
+                size: iconSize,
               ),
             ),
-          ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
