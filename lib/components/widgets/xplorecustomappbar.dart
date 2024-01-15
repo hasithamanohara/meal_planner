@@ -18,6 +18,7 @@ class ExploreCustomAppBar extends StatelessWidget {
           child: SizedBox(
             width: MediaQuery.of(context).size.width - 32,
             child: TextField(
+              enabled: false,
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Colors.white,
