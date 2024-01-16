@@ -49,16 +49,21 @@ class BottomPopupStep2 {
                   leading: const Icon(Icons.camera),
                   title: const Text('Take Photo'),
                   onTap: () {
-                    picker._pickImageFromGallery().then((_) {
+                    picker._pickImageFromCameras().then((_) {
                       picker.show(context);
                     });
+
                     // functionality for taking a photo here
                   },
                 ),
                 ListTile(
                   leading: const Icon(Icons.photo_library),
-                  title: const Text('Photo library'),
+                  title: const Text('Image Gallery'),
                   onTap: () {
+                    picker._pickImageFromGallery().then((_) {
+                      picker.show(context);
+                    });
+
                     // functionality for opening the gallery here
                   },
                 ),
@@ -81,12 +86,18 @@ class PickImage {
     _selectedImage = File(returnImage!.path);
   }
 
+  Future _pickImageFromCameras() async {
+    final returnImage =
+        await ImagePicker().pickImage(source: ImageSource.camera);
+    _selectedImage = File(returnImage!.path);
+  }
+
   void show(BuildContext context) {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
         return Container(
-            height: 600,
+            height: 700,
             width: double.maxFinite,
             child: _selectedImage != null
                 ? Image.file(_selectedImage!)
